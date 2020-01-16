@@ -1,0 +1,24 @@
+// Utilities
+// --------------------------------------------------
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.section-title {
+    font: {
+        size: 27px;
+        weight: bold;
+    }
+    text: {
+        align: center;
+        transform: capitalize;
+    }
+}
+.bg-grey {
+    background-color: $bg-grey;
+}
+.disclaimer {
+    color: #999;
+    font-size: rem(11px);
+    line-height: rem(14px);
+}

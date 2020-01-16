@@ -1,0 +1,54 @@
+// Contact
+// --------------------------------------------------
+
+.contact {
+    &__form {
+        background-color: $bg-grey;
+        @include media-breakpoint-up(md) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        @include media-breakpoint-down(sm) {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .btn-primary {
+            width: 180px;
+            margin-top: 1rem;
+        }
+    }
+    &__article {
+        color: $black;
+        font-size: rem(13px);
+        @include media-breakpoint-up(md) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        @include media-breakpoint-down(sm) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    &__alert {
+        color: #999999;
+        font-style: italic;
+        font-size: rem(13px);
+    }
+    &__frm-title {
+        color: $black;
+        text-align: center;
+        padding-bottom: 20px;
+        font: {
+            weight: bold;
+            size: rem(28px);
+            family: $headings-font-family;
+        }
+    }
+    &__txt-ara {
+        height: 220px;
+    }
+    &__info {
+        font-size: rem(11px);
+        color: #999999;
+    }
+}

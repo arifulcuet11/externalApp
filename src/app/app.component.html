@@ -1,0 +1,103 @@
+<app-loader></app-loader>
+<div id="header"  [ngClass]="isSmallLogo ? 'global-header--minimized' : 'global-header'" class="row global-header">
+  <div class="col-xs-4 col-sm-5 global-header__left">
+
+  </div>
+  <div class="col-xs-4 col-sm-2 global-header__middle">
+    <img class="global-header__logo img-responsive" src="../assets/img/metlife.png" alt="">
+  </div>
+  <div class="col-xs-4 col-sm-5 global-header__left text-right">
+    <div *ngIf="IsLogIn" class="identity-panel">
+      <label>Welcome, {{fullName}}</label>
+      <label class="ml-1">|</label>
+      <a href="void:javascript(0)" (click)='logOut()' class="ml-2">Log Out</a> 
+      <label class="ml-1">|</label>
+      <a href="void:javascript(0)" (click)='changePassword()' class="ml-2">Change Password</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<mat-toolbar class="top-bar menu-toolbar">
+  <mat-toolbar-row>
+    <button *ngIf='IsLogIn' type="button" mat-button (click)="drawer.toggle()">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <span class="align-middle main-title">Claims & Payment Management</span>
+    <span class="example-spacer"></span>        
+  </mat-toolbar-row>
+</mat-toolbar>
+
+ <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer [opened]="IsLogIn" mode="side" class="nav-menu-container">
+
+    <!-- <mat-nav-list>
+      <ng-container *ngFor="let item of menus">
+        <a [routerLink]="item.Url" routerLinkActive="nav-active"
+          class="mat-expansion-panel mat-expansion-panel-header custom-nav">
+          <mat-list-item *ngIf="!item.Childrens">
+            {{ item.Name }}
+          </mat-list-item>
+        </a>
+      </ng-container>
+    </ma t-nav-list> -->
+
+    <ng-container *ngFor="let item of menus |filterList:[{Name: 'Claim'}] ">
+      <mat-expansion-panel *ngIf="item.Childrens">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.Name }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <ng-container *ngFor="let item of item.Childrens">
+            <a [routerLink]="item.Url" routerLinkActive="nav-active" *ngIf=" item.Name == 'Group Claim Submission List'">
+              <mat-list-item class="custom-nav">
+                {{ item.Name }}
+              </mat-list-item>
+            </a>
+          </ng-container>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </ng-container>
+
+  </mat-drawer> 
+
+  <div class="container-fluid mb-5">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="container-fluid bg-gray-1st global-footer">
+    <div class="wrapper">
+  
+        <div class="row footer-legal">
+            <div class="logo-container col-xs-12 col-sm-3">
+                <a  class="hidden-xs logo" id="pay-premium_footer_global-footerImagePath">
+                    <img class="img-responsive" src="../assets/img/metlife-footer.png" alt="MetLife Bangladesh Logo">
+                </a>
+                <a href="tel:16344" class="call">CALL: +8809666716344</a>
+            </div>
+            <div class="copy col-xs-12 col-sm-9">
+                <div class="link">
+                    <a href="https://www.metlife.com.bd/online-privacy-policy/" target="_blank">Online Privacy Policy</a>
+                    <span class="bullet hidden-xs"></span>
+                </div>
+                <div class="link">
+                    <a target="_blank" href="https://www.metlife.com.bd/terms-and-conditions/" id="pay-premium_footer_global-footerbulletlinks1">Terms and Conditions</a>
+                    <span class="bullet hidden-xs"></span>
+                </div>
+                <div class="copyright">
+                    <p style="color:#333">© 2019 MetLife, Inc. &nbsp;All Rights Reserved.</p>
+                    <p class="doc-id"></p>
+                    <p></p>
+                </div>
+            </div>          
+        </div>
+    </div>
+  </div>
+<!-- </mat-drawer-container> -->

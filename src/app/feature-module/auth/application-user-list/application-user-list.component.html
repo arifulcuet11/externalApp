@@ -1,0 +1,90 @@
+<div class="row mt-5 mb-2">
+    <div class="offset-md-2 col-md-2 mt-4">
+      <a mat-stroked-button (click)='naviagte.toAddUser()'>New user</a>
+    </div>
+    <div class="offset-md-4 col-md-2">
+        <mat-form-field >
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+      </div>
+</div>
+<div class="row">
+  <div class="col-8 offset-md-2">
+    <div class="mat-elevation-z8">
+      <div class='region-root-list'>
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Position SL -->
+          <ng-container matColumnDef="sl">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> SL#. </th>
+            <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+          </ng-container>
+
+          <!-- Position First Name -->
+          <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          </ng-container>
+
+          <!-- Position Middle Name -->
+          <!-- <ng-container matColumnDef="middleName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Middle Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.middleName}} </td>
+          </ng-container> -->
+
+          <!-- Position Last Name -->
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+          </ng-container>
+
+          <!-- Position Email -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+
+          <!-- Position Email -->
+          <ng-container matColumnDef="phoneNumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>
+            <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+          </ng-container>
+
+          <!-- Position Head office user -->
+          <ng-container matColumnDef="isHeadOfficeUser">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Head office User? </th>
+            <td mat-cell *matCellDef="let element">
+              <span *ngIf="element.isHeadOfficeUser">
+                <i class=" text-success fa fa-check" aria-hidden="true"></i>
+              </span>
+              <span *ngIf="!element.isHeadOfficeUser">
+                <i class=" text-danger fa fa-times" aria-hidden="true"></i>
+              </span>
+            </td>
+          </ng-container>
+
+          <!-- Position Action -->
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let element">
+              <button type="button" class="btn btn-sm btn-primary mr-1" (click)='edit(element.id)'><i
+                  class="fa fa-edit"></i></button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="columns"></tr>
+          <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+        </table>
+      </div>
+      <mat-paginator
+       [pageSizeOptions]="pagination.pageSizes"
+       [pageSize]="pagination.pageSize"
+       [pageIndex]="pagination.pageIndex"
+       [length]="pagination.totalCount"
+       (page)="ChangePage($event)">
+       </mat-paginator>
+    </div>
+
+  </div>
+
+</div>

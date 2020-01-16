@@ -1,0 +1,283 @@
+// Dashboard Profile
+// --------------------------------------------------
+
+.add-links {
+    font-size: rem(13px);
+    text-transform: uppercase;
+}
+
+// -----------------------------------------------------------
+//              My Details
+//-------------------------------------------------------------
+
+//--- personal-information ---
+.personal-information {
+    &__lbl {
+        font: {
+            size: rem(13px);
+            weight: bold;
+        }
+    }
+    &__val {
+        font-size: rem(13px);
+        a {
+            color: $body-color;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &__edit-icon {
+        cursor: pointer;
+        fill: $primary;
+        stroke-width: 0;
+        margin-left: 0.5rem;
+        display: inline-block;
+    }
+    .collapsed+&__edit-icon {
+        display: none;
+    }
+    .collapsed+&__edit {
+        display: none;
+    } // personal information edit
+    &__edit {
+        display: none;
+    }
+}
+
+// ------------------------------------------------------------
+//             Submit Documents/Details
+//-------------------------------------------------------------
+
+// -------- mandatory-documents ---------
+.mandatory-documents {
+    //--- Instructions ---
+    &__instructions {
+        padding-bottom: 1rem;
+        p {
+            color: $black;
+            margin-bottom: 0;
+            font-size: rem(14px);
+        }
+    } //--- list ---
+    &__list {
+        padding-left: 0;
+        list-style: none;
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+    }
+    &__info {
+        h3 {
+            margin-bottom: 0;
+            font-weight: bold;
+            padding-top: 3px;
+            font-size: rem(14px);
+        }
+        p {
+            margin-bottom: 0;
+            font-size: rem(13px);
+        }
+        a {
+            font-size: rem(13px);
+            transition: all 0.3s;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .custom-control {
+        width: 40px;
+        height: 26px;
+        align-self: flex-start;
+        .custom-control-label {
+            &::after,
+            &::before {
+                top: -1rem;
+                width: 26px;
+                height: 26px;
+                cursor: not-allowed;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+// ------ custom checkbox/radio --------
+.my-checkbox {
+    .custom-control-label {
+        &::after,
+        &::before {
+            top: -1rem;
+            box-shadow: none;
+            background-size: 26px 26px;
+            background-color: transparent;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+    .custom-control-input:checked~.custom-control-label::after,
+    .custom-control-input:checked~.custom-control-label::before {
+        background: {
+            color: transparent;
+            repeat: no-repeat;
+        }
+        box-shadow: none;
+        outline: none;
+        cursor: not-allowed;
+        pointer-events: none;
+    } // ------ checkbox background img  ------
+    //checkbox-1
+    &.my-checkbox-1 .custom-control-input:checked~.custom-control-label::after {
+        background-image: url(#{$img-url}checkbox-1-active.png);
+    }
+    &.my-checkbox-1 .custom-control-label::after {
+        background-image: url(#{$img-url}checkbox-1.png);
+    } //checkbox-2
+    &.my-checkbox-2 .custom-control-input:checked~.custom-control-label::after {
+        background-image: url(#{$img-url}checkbox-2-active.png);
+    }
+    &.my-checkbox-2 .custom-control-label::after {
+        background-image: url(#{$img-url}checkbox-2.png);
+    } //checkbox-3
+    &.my-checkbox-3 .custom-control-input:checked~.custom-control-label::after {
+        background-image: url(#{$img-url}checkbox-3-active.png);
+    }
+    &.my-checkbox-3 .custom-control-label::after {
+        background-image: url(#{$img-url}bg-checkbox.png);
+    }
+}
+
+//-------- view-data  -----
+.view-data {
+    &__title {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: rem(13px);
+    }
+    &__val {
+        font-size: rem(13px);
+    }
+}
+
+//-------- Summary of Field Work -----
+.summary-work {
+    &__info {
+        margin-top: 30px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: rem(13px);
+        padding-bottom: rem(8px);
+    }
+    &__question {
+        font-size: rem(13px);
+    }
+    &__txt-question {
+        height: 102px;
+        resize: none;
+        border: 2px solid #dbdbdb;
+        @include scrollbars(.5em, slategray);
+    }
+    &__answer {
+        font-weight: bold;
+        font-size: rem(13px);
+    }
+}
+
+// ------------------------------------------------------------
+//             declarations
+//-------------------------------------------------------------
+.declarations {
+    &__title {
+        color: $black;
+        font-weight: bold;
+        font-size: rem(16px);
+    }
+    &__label {
+        display: block;
+        font-size: rem(14px);
+    }
+    &__terms {
+        font-size: rem(14px);
+    }
+    &__note {
+        margin-bottom: 0;
+        font-size: rem(13px);
+    }
+    .custom-control {
+        font-size: rem(14px);
+    }
+    .custom-control-label {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+// ------------------------------------------------------------
+//             Acknowledgment
+//-------------------------------------------------------------
+.acknowledgment {
+    &__title {
+        color: $black;
+        font-weight: bold;
+        font-size: rem(16px);
+        padding-bottom: 1rem;
+    }
+}
+
+.download-dcoument {
+    &__list {
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+        li {
+            align-items: center;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            a {
+                position: relative;
+            }
+            .icon-download {
+                bottom: 8px;
+                z-index: 1;
+                width: 25px;
+                height: 25px;
+                right: -5px;
+                position: absolute;
+                background: url(#{$img-url}icon-download.png) no-repeat;
+            }
+            .icon-tickmark {
+                bottom: 8px;
+                z-index: 1;
+                width: 25px;
+                height: 25px;
+                right: -5px;
+                position: absolute;
+                background: url(#{$img-url}icon-tickmark.png) no-repeat;
+            }
+            &:first-child {
+                margin-right: 90px;
+            }
+        }
+        .feather-file-text {
+            width: 58px;
+            height: 70px;
+            fill: #f2f2f2;
+            color: #a7a8aa;
+            stroke-width: 1px;
+        }
+        &.disable {
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    }
+    &__title {
+        margin-top: 2rem;
+        font-weight: bold;
+        font-size: rem(14px);
+    }
+}

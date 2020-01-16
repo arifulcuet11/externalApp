@@ -1,0 +1,26 @@
+// Success and Failed Css
+// --------------------------------------------------
+.success {    
+    @include media-breakpoint-down(md) {
+        font-size: rem(14px);
+    }
+    
+    &__title {
+        font-size: rem(32px);
+
+        @include media-breakpoint-down(lg) {
+            font-size: rem(24px);
+        }
+    }
+    &__table {
+        line-height: 16px;
+
+        th {
+            min-width: 150px;
+        }
+        td {
+            min-width: 200px;
+        }
+    }
+    
+}

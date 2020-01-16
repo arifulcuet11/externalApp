@@ -1,0 +1,21 @@
+@import "src/styles.scss";
+.signup {
+    max-width: 300px;
+    margin: 50px auto;
+    @include media-breakpoint-down(sm) {
+        max-width: 250px;
+    }
+    .login-title {
+        color: #75787b;
+        font-size: 13px;
+        text-align: center;
+    }
+    .form-title {
+        color: #75787b;
+        font-size: 11px;
+        margin-bottom: 20px;
+    }
+    .diff-account-link {
+        font-size: 13px;
+    }
+}

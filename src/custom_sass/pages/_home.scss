@@ -1,0 +1,163 @@
+// Home
+// --------------------------------------------------
+
+// ----------- career-path ---------------
+.career-path {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &__tabs {
+        display: flex;
+        list-style: none;
+        margin-top: 50px;
+        justify-content: center;
+        li {
+            display: inline-block;
+        }
+        li a {
+            width: 182px;
+            height: 140px;
+            display: flex;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: #297eb4;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+            &.active,
+            &:hover {
+                text-decoration: none;
+                background-color: #e5f4fb;
+                .career-path__arrow {
+                    visibility: visible;
+                }
+            }
+            span {
+                margin-top: 5px;
+            }
+        }
+    }
+    &__arrow {
+        left: 50%;
+        width: 25px;
+        height: 14px;
+        bottom: -14px;
+        margin-left: -12px;
+        visibility: hidden;
+        position: absolute;
+        background: url(#{$img-url}arrow-bottom.png) no-repeat;
+    }
+    &__icon {
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tab-pane {
+        padding: 2rem;
+        text-align: center;
+    }
+}
+
+.partner-tab {
+    &__article {
+        display: flex;
+        min-height: 185px;
+        @include target-ie {
+            height: 185px;
+        }
+        padding-top: 1rem;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 1rem;
+        justify-content: center;
+        flex-direction: column;
+        @include media-breakpoint-up(md) {
+            padding-left: 50px;
+            padding-right: 50px;
+            background: url(#{$img-url}shadow-arrow.png) no-repeat right center;
+        }
+        h3 {
+            color: $black;
+            font-size: rem(20px);
+            font-weight: bold;
+        }
+        p {
+            color: $black;
+            font-size: rem(13px);
+        }
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        @include media-breakpoint-up(md) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+}
+
+// ------------ partner -------------------
+.partner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $bg-grey;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: space-around;
+        li {
+            width: 255px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            p {
+                color: $black;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+// ---- promocard ----
+.promocard {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    &__article {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 25px;
+        @include media-breakpoint-up(lg) {
+            max-width: 50%;
+        }
+        h3 {
+            font-size: rem(27px);
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        p {
+            font-size: rem(14px);
+        }
+        .btn-primary {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.promocard-img {
+    float: right;
+    max-width: 100%;
+    @include media-breakpoint-up(md) {
+        height: 100%;
+    }
+}

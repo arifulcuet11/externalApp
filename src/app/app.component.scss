@@ -1,0 +1,242 @@
+.example-icon {
+    padding: 0 14px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .top-bar{
+    background: none;
+  }
+
+  .menu-toolbar{
+    background: #0c639e;
+  }
+
+  .menu-toolbar nav a {
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 16px;    
+  }
+
+  .identity-panel {
+    font-size: 12px;
+    line-height: 70px;    
+    font-weight: normal;
+    transition: 0.5s;
+    text-transform: capitalize;
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  .identity-panel a {
+    text-decoration: none;    
+  }
+
+  .identity-panel label {
+    color: #007abc;    
+  }
+
+  .example-container {
+    width: 100%;
+    height: calc(100vh - 134px);
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .global-header--minimized + mat-toolbar + .example-container {
+    height: calc(100vh - 114px);
+    transition: 0.5s;
+  }
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .nav-menu-container{
+    min-width: 250px ;
+  }
+
+  .custom-nav{
+    font-size: 15px;
+  }
+
+  .nav-active{
+    display: block !important;
+    background: #0c649e27 !important;
+  }
+
+
+  .custom-file-upload {
+    width: 78px;
+    float: right;
+    overflow: hidden; 
+    cursor: pointer;
+    padding-left: 80px;   
+}
+
+  .custom-file-label {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 80px;
+      white-space: nowrap;
+  }
+
+  .float-right {
+    float: right !important;
+    text-align: right !important;
+}
+.fa-bars {
+  color: #fff;
+}
+
+
+
+
+// start css for claim submision (validating enrollee)
+// start global header
+.global-header {
+  height: 70px;
+  transition: height .5s;
+  position: static;
+  top: 0;
+  background-color: #fff;
+  color: #333;
+  font-size: 11px;
+  font-weight: bold;
+  width: 100%;
+  text-transform: uppercase;
+  z-index: 1000;
+  .global-header__logo {
+    height: auto;
+    max-height: 38px;
+    width: 168px;
+    margin: 16px auto;
+    transition: all .5s;
+  }
+  .global-header__left,
+  .global-header__middle,
+  .global-header__right {
+    background-color: #fff;
+    color: #333;
+  }
+  .global-header__left {
+    padding: 0 0 0 30px;
+    transition: padding .3s ease 0s;
+  }
+  .global-header__middle {
+    text-align: center;
+  }
+}
+.global-header--minimized {
+  height: 50px;
+  transition: all .5s;
+  box-shadow: rgba(0,0,0,.2) 0 2px 2px 0;
+  .global-header__logo {
+    height: auto;
+    max-height: 27px;
+    width: 120px;
+    transition: all .5s;
+    margin: 11.5px auto;
+  }
+  .identity-panel {
+    line-height: 50px;
+    transition: 0.5s;
+  }
+}
+.global-footer {
+  padding-bottom: 150px;
+  .wrapper {
+    width: 85%;
+    margin: auto;
+    max-width: 1300px;
+    padding-top: 40px;
+    .footer-legal {
+      color: #999;
+      font-size: .98em;
+      padding-top: 20px;
+      &:only-child {
+          border-top: none;
+          padding-top: 0;
+      }
+      .logo-container {
+        width: auto;
+        .logo {
+          display: block;
+          width: 130px;
+          .img-responsive {
+            display: block;
+            max-width: 100%;
+            height: auto;
+          }
+          .img {
+            height: auto;
+            width: 130px;
+            margin: 0 auto 10px;
+          }
+        }
+        .call {
+          font-size: 13px;
+          line-height: 15px;
+          padding: 0;
+          margin-top: 15px;
+          color: #999;
+          pointer-events: none;
+        }
+      }
+      .copy {
+        font-size: 12px;
+        line-height: 20px;
+        .link {
+          display: inline;
+          font-size: 12px;
+          border: none;
+          padding: 0;
+          margin: 0;
+          line-height: 20px;
+          a {
+            margin: 0;
+            color: #0061a0;
+          }
+          .bullet {
+            display: inline-block;
+            font-size: 15px;
+            line-height: 15px;
+            margin: 0 5px;
+          }
+        }
+        .copyright {
+          display: inline;
+          font-size: 12px;
+          line-height: 20px;
+          p:nth-child(1) {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}
+.global-header--minimized + .example-container {
+  height: calc(100vh - 50px);
+  transition: 0.5s;
+} 
+// end global footer
+.bg-gray-1st {
+  background-color: #f2f2f2;
+}
+
+.lg_logo{
+  padding: 30px 10px;
+}
+
+.sm_logo{
+  padding: 80px 10px;
+}
+// end css for claim submision (validating enrollee)

@@ -1,0 +1,195 @@
+// Dashboard 
+// --------------------------------------------------
+.dashboard-cards {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+// ------------ dashboard-box -----------------
+.dashboard-box {
+    padding: 15px;
+    height: 100%;
+    min-height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white;
+    border-left: 10px solid $blue;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    @include media-breakpoint-down(sm) {
+        min-height: auto;
+    }
+    &__header {
+        margin-bottom: 30px;
+    }
+    &__title {
+        margin-bottom: 0;
+        font-weight: bold;
+        font-size: rem(20px);
+        font-family: $headings-font-family;
+        @include media-breakpoint-down(sm) {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+}
+
+//----- module list ---
+.module-list {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    &__item {
+        display: flex;
+        min-height: 36px;
+        padding-left: 50px;
+        @include media-breakpoint-down(lg) {
+            padding-left: 0px;
+        }
+        position: relative;
+        background-repeat: no-repeat;
+        justify-content: space-between;
+        a {
+            display: inline-block;
+            line-height: 25px;
+        }
+        &:not(:first-child) {
+            padding-top: 10px;
+        }
+        &:not(:last-child) {
+            padding-bottom: 10px;
+        }
+        &::before {
+            left: 9px;
+            z-index: 51;
+            content: '';
+            width: 26px;
+            height: 26px;
+            position: absolute;
+        } 
+        &::after {
+            width: 5px;
+            left: 20px;
+            @include media-breakpoint-down(lg) {
+                left: -30px;
+            }
+            content: '';
+            height: 105%;
+            position: absolute;
+            border-radius: 3px;
+        }
+        
+        //-- module continue --
+        &.module-need-continue {
+            &::before {
+                background: url(#{$img-url}checkbox-3-active.png) no-repeat;
+            }
+            &::after {
+                background-color: $red;
+            }
+        } 
+        //-- module completed --
+        &.module-completed {
+            &::before {
+                background: url(#{$img-url}checkbox-1-active.png) no-repeat;
+            }
+            &::after {
+                background-color: $green;
+            }
+        } 
+        //-- module progress --
+        &.module-progress {
+            &::before {
+                background: url(#{$img-url}checkbox-2-active.png) no-repeat;
+            }
+            &::after {
+                background-color: $blue;
+            }
+        } 
+        //-- module normal --
+        &.module-normal {
+            &::before {
+                background: url(#{$img-url}bg-checkbox.png) no-repeat;
+            }
+            &::after {
+                background-color: $gray-300;
+            }
+        }
+        &:last-child {
+            &::before {
+                top: 10px;
+            }
+            &::after {
+                top: 0;
+                height: 100%;
+            }
+        }
+        &:first-child {
+            &::before {
+                top: 0;
+            }
+            &::after {
+                top: 0;
+            }
+        }        
+        &:not(:first-child):not(:last-child) {
+            &::before {
+                top: 10px;
+            }
+            &::after {
+                top: 0;
+            }
+        }
+        &:only-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+// -------------- module-status-help -----------------
+.module-status-help {
+    ul {
+        margin-top: 2rem;
+    }
+    li {
+        padding-right: 1rem;
+        img {
+            margin-right: 0.5rem;
+        }
+        @include media-breakpoint-down(md) {
+            display: block;
+            margin-bottom: 1rem;
+        }
+        @include media-breakpoint-down(xs) {            
+           padding-right: 0;
+        }
+    }
+}
+
+// -------------- Actions for you -----------------
+.dashboard-acction {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    &__title {
+        font-weight: bold;
+        font-size: rem(24px);
+        font-family: $headings-font-family;
+    }
+    .btn {
+        max-width: 250px;
+        border-width: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
+    &--lessons {
+        .btn {
+            min-width: 250px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+}

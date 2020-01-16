@@ -1,0 +1,46 @@
+// Home Mgea Menu
+// --------------------------------------------------
+
+.home-megamenu {
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    display: none;
+    position: fixed;
+    background-color: $bg-grey;
+    @include media-breakpoint-up(lg) {
+        top: 70px;
+        padding: 50px 40px 100px;
+    }
+    @include media-breakpoint-down(md) {
+        top: 50px;
+        padding: 30px 15px;
+    }
+    &__scroll {
+        @include media-breakpoint-up(lg) {
+            @include calc( height, '100% - 150px');
+        }
+        @include media-breakpoint-down(md) {
+            @include calc( height, '100% - 60px');
+        }
+        @include scrollbars(.75em, slategray);
+    }
+}
+
+//----- menu-links  -----
+.menu-links {
+    margin-bottom: 30px;
+    &__title {
+        color: $dark;
+        font-size: rem(16);
+        line-height: rem(28);
+        font-weight: normal;
+    }
+    a {
+        font-weight: normal;
+        font-size: rem(12px);
+        line-height: rem(24px);
+    }
+}

@@ -1,0 +1,135 @@
+// profile-creation
+// --------------------------------------------------
+
+
+.profile-creation {
+    &__photo {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin-left: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        background: url(#{$img-url}avatar.png) no-repeat;
+        background-size: 150px;
+        .custom-file-input,
+        .custom-file-label {
+            opacity: 0;
+            cursor: pointer;
+            position: absolute;
+        }
+        .custom-file-input {
+            width: 100%;
+            height: 100%;
+        }
+        @include media-breakpoint-down(md) {
+            margin-right: auto;
+        }
+        &--upoload {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 24px;
+            color: #fff;
+            font-size: rem(11px);
+            text-align: center;
+            position: absolute;
+            line-height: 24px;
+            background-color: rgba($color: #000000, $alpha: 0.6)
+        }
+    }
+
+    &__btn {
+        width: 200px;
+        max-width: 100%;
+        line-height: 30px;
+    }
+
+    .input-group {
+        width: auto;
+    }
+
+    &__fetch {
+        .form-control {
+            flex: 1;
+        }
+        .btn {
+            margin-left: 15px;
+            @include media-breakpoint-down(xs) {
+                margin-left: -60px;
+            }
+        }
+    }
+
+    label {
+        margin-bottom: 5px;
+    }  
+    
+    &__filter {
+        margin-bottom: 0;
+        padding-top: 10px;
+        text-align: right;
+        cursor: pointer;
+        float: right;
+        .feather {
+            stroke-width: 1;
+        }
+    }
+}
+
+
+//------------ profile-view --------------
+
+.profile-view {
+    padding-bottom: 30px;
+    @include media-breakpoint-up(md) {
+        padding-top: 30px;
+    }
+    ul {
+        padding-left: 0;
+    }
+    &__row {
+        padding: 10px;
+        &:nth-child(odd) {
+            background-color: $light;
+        }
+    }
+    &__lbl {
+        flex: 2;
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: rem(14px);
+    }
+    &__colon {
+        flex: 1;
+        text-align: center;
+    }
+    &__value {
+        flex: 4;
+        font-size: rem(14px);
+    }
+    &__title {
+        color: #fff;
+        text-align: center;
+        h3 {
+            font-size: rem(18px);
+        }
+        .btn-outline-primary {
+            color: #fff;
+            border-color: #fff;
+            &:hover{
+                color: $primary;
+                background-color: $white;
+            }
+        }
+        .feather-edit {
+            width: 16px;
+            height: 16px;
+        }
+        .feather-arrow-left {
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+

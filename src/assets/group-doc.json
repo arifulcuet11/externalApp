@@ -1,0 +1,8 @@
+{
+  "barcode_METCLGM01": "Medical",
+  "barcode_METCLDR06": "DiagonosisReport",
+  "barcode_METCLDS05": "DischargeCertificate",
+  "barcode_METCLIB08": "ItemizedBill",
+  "barcode_METCLPR07": "DoctorPrescription",
+  "barcode_METCLMD09": "Medicine"
+}

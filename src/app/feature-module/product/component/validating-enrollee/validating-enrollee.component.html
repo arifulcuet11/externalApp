@@ -1,0 +1,225 @@
+<!-- <div id="header"  [ngClass]="isSmallLogo ? 'global-header--minimized' : 'global-header'" class="row global-header">
+  <div class="col-xs-4 col-sm-5 global-header__left">
+  </div>
+  <div class="col-xs-4 col-sm-2 global-header__middle">
+    <img class="global-header__logo img-responsive" src="../assets/img/metlife.png" alt="">
+  </div>
+</div> -->
+<div class="row">
+  <div class="col-12 text-center page-title this-title-padding">
+    <h3>Claim Submission</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="offset-md-1 col-md-10 py-4">
+    <mat-tab-group class="claim-form-tab" [selectedIndex]="selectedTab" (selectedIndexChange)="selectedTab=$event">
+      <mat-tab [disabled]="tab[0].disabled" label="{{tab[0].name}}">
+        <div class="mt-4">
+          <div class="col-md-12">
+            <h6 style="font-weight: 600;">Please enter your personal data.</h6>
+          </div>    
+        </div>
+        <form #formDirective1="ngForm" [formGroup]="validatingEnrolleForm">
+          <div class="col-md-6 ">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Group Policy Number* </mat-label>
+              <input matInput formControlName="groupPolicyNo">
+              <mat-error *ngIf="validatingEnrolleForm.controls['groupPolicyNo'].hasError('required')">
+                Group Policy Number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Certificate Number*</mat-label>
+              <input matInput formControlName="certificateNo">
+              <mat-error *ngIf="validatingEnrolleForm.controls['certificateNo'].hasError('required')">
+                Certificate Number is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Birth Year*</mat-label>
+              <input matInput formControlName="birthYear">
+              <mat-error *ngIf="validatingEnrolleForm.controls['birthYear'].hasError('required')">
+                Birth Year is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <button mat-stroked-button class="mt-2 mb-2 btn btn-primary" [disabled]="!validatingEnrolleForm.valid || isOtpGenerate"
+              (click)='genarateOTP()'>Generate OTP</button>
+          </div>
+        </form>
+        <form #formDirective2="ngForm" *ngIf="otpFlag" [formGroup]="otpForm">
+          <div class="col-md-6">
+            <p class="text-sm">{{message}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Regenerate OTP in: {{timeLeft|minuteConversion}} </strong></p>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Enter OTP*</mat-label>
+              <input matInput formControlName="otpNumber">
+              <mat-error *ngIf="otpForm.controls['otpNumber'].hasError('required')">
+                OTP is required
+              </mat-error>
+            </mat-form-field>
+            <button mat-stroked-button color="primary" class="mt-2 mb-2 btn btn-primary" [disabled]="!otpForm.valid"
+              (click)='verifyOTP(formDirective1,formDirective2)'>
+              Verify
+            </button>
+          </div>
+        </form>
+      </mat-tab>
+      <mat-tab [disabled]="tab[1].disabled" label="{{tab[1].name}}">
+        <form #formDirective2="ngForm" [formGroup]="generatingImputForm" class="mt-4">
+          <div class="col-md-6 ">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Group Policy Number </mat-label>
+              <input matInput formControlName="groupPolicyNo" readonly>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Certificate Number</mat-label>
+              <input matInput formControlName="certificateNo" readonly>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Birth Year</mat-label>
+              <input matInput formControlName="birthYear" readonly>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Insured Name</mat-label>
+              <input matInput formControlName="insuredName" readonly>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Patient Name & Relationship</mat-label>
+              <mat-select (selectionChange)="dependentChange($event)" formControlName="enrolDependentId">
+                  <mat-option [value]="0">{{generatingImputForm.controls['insuredName'].value}}(Self)</mat-option>
+                <mat-option *ngFor="let r of relationList" [value]="r.enrolDependentId">
+                  {{r.name}} & {{r.relationName}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="generatingImputForm.controls['relationId'].hasError('required')">
+                Patient Name & Relationship is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6" [hidden]="generatingImputForm.controls['enrolDependentId'].value>0">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Product Type*</mat-label>
+              <mat-select formControlName="productId">
+                <mat-option *ngFor="let p of productList" [value]="p.id">
+                  {{p.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="generatingImputForm.controls['productId'].hasError('required')">
+                Product Type is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6" [hidden]="generatingImputForm.controls['enrolDependentId'].value==0">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Product Type*</mat-label>
+              <mat-select formControlName="productId">
+                <mat-option *ngFor="let p of dependentProducts |filterList:[{enrollDependentId:generatingImputForm.controls['enrolDependentId'].value}]" [value]="p.product.id">
+                  {{p.product.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="generatingImputForm.controls['productId'].hasError('required')"> 
+                Product Type is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Nature of Sickness</mat-label>
+              <input matInput formControlName="natureOfSickness">
+              <mat-error *ngIf="generatingImputForm.controls['natureOfSickness'].hasError('required')">
+                Insured Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Total Claim Amount*</mat-label>
+              <input matInput formControlName="claimAmount">
+              <mat-error *ngIf="generatingImputForm.controls['claimAmount'].hasError('required')">
+                Total Claim Amount is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-2 btn-styler">
+            <button mat-stroked-button color="primary" class="mt-2 mb-2 btn btn-primary" [disabled]="!generatingImputForm.valid"
+              (click)='GetClaimDocuments()'>
+              Next
+            </button>
+          </div>
+
+        </form>
+      </mat-tab>
+      <mat-tab [disabled]="tab[2].disabled" label="{{tab[2].name}}">
+
+        <div class="mt-4">
+          <div class="col-md-8 file-group" *ngFor='let item of fileExtends; let i = index'>
+
+            <div  class="col-md-4 mt-3">
+              <label *ngIf="item.index===1"> {{item.docName}}</label> 
+              <label *ngIf="item.index!==1">Additional document</label>
+            </div>
+            <div  class="col-md-4 mt-2">
+              <input type="file" [name]="item.documentId" [accept]="item.acctptedTypes"
+                class="custom-file-input custom-file-upload" (change)="onFileChange($event, item)" required>
+              <label class="custom-file-label custom-file-label-mt" for="barCode">{{ (item.file != null &&
+                  item.file?.name.length>0)
+                      ? item.file.name : 'Choose file'}}</label>
+            </div>
+            <div  class="col-md-3 mt-2"> 
+                <button *ngIf="item.index===1"  class="" (click)="addDocument(item)">
+                  <i class="fa fa-plus"></i>
+                </button>
+                <button *ngIf="item.index !=1" class="" (click)="removeDocument(item)">
+                  <i class="fa fa-minus"></i>
+                </button>
+            </div>
+            <hr>
+          </div>
+
+          <!-- <div class="col-md-10 mt-5 region-mark">
+
+            <div class="region-check">
+                <mat-checkbox  (change)="changeStatus($event)"></mat-checkbox>
+            </div>
+            <div class="region-description">
+                It's my mistake i don't need to copy all the files in the 
+                sourceDir to the targetDir but to copy only the files that are in the 
+                AnimatedGifFiles List since in the sourceDir i have a lot of files but i
+                 need to copy only the files that are in the List. It must be the files 
+                 from the List and not all the files in the sourceDir
+            </div>
+          </div> -->
+
+          <div class="col-md-5 mt-4 pr-sm-0">
+            <hr />
+              <button [disabled]=" isDocSubmission" mat-stroked-button color="primary" class="mt-2 mb-2 btn btn-primary" (click)='submit(formDirective2)'>
+                Submit
+              </button>
+          </div>
+          <div class="col-md-12">
+              <p style="font-size: 12px;">On clicking “Submit”, you agree to MetLife’s <a target="_blank" href="https://www.metlife.com.bd/online-privacy-policy/">Online Privacy Policy.</a></p>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+</div>

@@ -1,0 +1,103 @@
+<div class="row mt-5">
+  <div class='offset-md-2 col-md-8'>
+    <h4>Enroll Claim Detail</h4>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="offset-md-2 col-md-8">
+    <form [formGroup]="enrollClaimForm">
+      <div class='row'>
+        <div class='col-md-12'>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Employee Certificate No</mat-label>
+            <input matInput formControlName="employeeCertificateNo" readonly>
+            <mat-error *ngIf="enrollClaimForm.controls['employeeCertificateNo'].hasError('required')">
+              Name is <strong> required </strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-12'>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Employee Name</mat-label>
+            <input matInput formControlName="employeeName" readonly>
+            <mat-error *ngIf="enrollClaimForm.controls['employeeName'].hasError('required')">
+              Name is <strong> required </strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-12'>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Patient Name</mat-label>
+            <input matInput formControlName="patientName" readonly>
+            <mat-error *ngIf="enrollClaimForm.controls['patientName'].hasError('required')">
+              Name is <strong> required </strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Product Type</mat-label>
+            <input matInput formControlName="productType" readonly>
+            <mat-error *ngIf="enrollClaimForm.controls['productType'].hasError('required')">
+              Name is <strong> required </strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Claim Amount</mat-label>
+            <input matInput type="number" formControlName="claimAmount" readonly>
+            <mat-error *ngIf="enrollClaimForm.controls['claimAmount'].hasError('required')">
+              Claim Amount is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Pay To</mat-label>
+            <mat-select formControlName="payTo" (selectionChange)="payTo($event.value)">
+              <mat-option *ngFor="let item of claimPayToList" [value]="item.id">
+                {{item.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="enrollClaimForm.controls['payTo'].hasError('required')">
+              Pay To is <strong> required </strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-md-12" *ngIf="fileUpload && !isViewMode">
+        <div class="">
+          <input type="file" 
+            class="custom-file-input custom-file-upload custom-file-label-mt" (change)="onFileChange($event)" required>
+          <label class="custom-file-label custom-file-label-mt" for="barCode">{{ (file != null &&
+                file?.name.length>0)
+                  ? file.name : 'Choose file'}}</label>
+        </div>
+      </div>
+
+      <div class='col-md-12' *ngIf="isViewMode == false">
+        <button mat-stroked-button color="primary" class="ml-3 mt-3" [disabled]="!submitButton"
+          (click)='reject()'>Reject
+        </button>
+        <button mat-stroked-button color="primary" class="ml-3 mt-3" [disabled]="!submitButton"
+          (click)='saveAndAuthorize()'>Save and Authorize
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

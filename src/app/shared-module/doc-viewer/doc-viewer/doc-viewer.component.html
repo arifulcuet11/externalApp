@@ -1,0 +1,15 @@
+<div #imgviewer>
+    <div [hidden]="isImage">
+        <iframe id="pdf_preview" class="pdfviewer" src="" viewer="google" style="width:100%;"
+            [style.height]="rheight"></iframe>
+    </div>
+
+    <div [hidden]="!isImage">
+        <ngx-image-viewer class="imageClass" [config]="configure" [src]="images" [style.height]="rheight">
+        </ngx-image-viewer>
+    </div>
+    <div class="example-button-row float-right mt-2" *ngIf="docViewer && docViewer.urls.length>1" >
+        <button mat-mini-fab color="primary" [disabled]="docViewer?.currentIndex==0" (click)="previous()"><i class="fa fa-arrow-left"></i></button>
+        <button mat-mini-fab color="primary" [disabled]="docViewer?.currentIndex==docViewer.urls.length-1" (click)="next()"><i class="fa fa-arrow-right"></i></button>
+    </div>
+</div>

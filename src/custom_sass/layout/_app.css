@@ -1,0 +1,23 @@
+.mandatory-sign{
+    color: red;
+    line-height: 31px;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+.mandatory-field{
+    display: inline-block;
+    width: calc(100% - 20px);
+}
+
+.mandatory-field-position{
+    margin-left:20px;
+    width: calc(100% - 20px)
+}
+
+.required:before{
+    content: '*';
+    color:red;
+  }
+

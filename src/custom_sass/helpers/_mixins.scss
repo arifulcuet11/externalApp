@@ -1,0 +1,41 @@
+
+// Mixin
+// --------------------------------------------------
+
+//------ Css calc------------
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+// Usage: @include calc( width, '100% - 2px');
+
+//------ Custom Scrollbar Design ------------
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+    & {
+        overflow: auto;
+    }
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 100px;
+        background: $foreground-color;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 100px;
+        background: $background-color;
+    }
+}
+
+//Usage: @include scrollbars(.5em, slategray);
+
+
+//------ target IE-10, IE-11 ------------
+@mixin target-ie {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+// Usage: @include target-ie {  color: cyan; }

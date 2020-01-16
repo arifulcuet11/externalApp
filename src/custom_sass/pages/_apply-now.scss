@@ -1,0 +1,63 @@
+
+// Apply Now
+// --------------------------------------------------
+.apply-now {
+    @include media-breakpoint-up(md) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    &__steps {
+        background: $white;
+        min-height: 200px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        @include target-ie {
+            height: 200px;
+        }
+        &-left {
+            display: flex;
+            color: $white;
+            align-items: center;
+            justify-content: center;
+            background-color: $menu-blue;
+            h3 {
+                margin-bottom: 0;
+                padding: 5px;
+                font: {
+                    weight: bold;
+                    size: rem(22px);
+                }
+            }
+        }
+        &-list {
+            padding-left: 30px;
+            li {
+                font-size: rem(13px);
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+    &__form {
+        padding-top: 50px;
+        .btn {
+            width: 180px;
+            margin-top: 1rem;
+        }
+    }
+    &__thanks {
+        h3 {
+            padding-bottom: 1.5rem;
+            font: {
+                weight: bold;
+                size: rem(22px);
+            }
+        }
+        ul {
+            padding-bottom: 1rem;
+        }
+    }
+}

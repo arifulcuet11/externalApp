@@ -1,0 +1,51 @@
+// Profile Tabs
+// --------------------------------------------------
+.profile-tabs {
+    padding-left: 15px;
+    border-bottom: 10px solid $green;
+    .nav {
+        padding-right: 0;
+    }
+    .nav-item {
+        margin-bottom: 0;
+    }
+    .nav-link {
+        color: $white;
+        font-size: rem(14px);
+        border: 10px solid $bg-grey;
+        background-color: $menu-blue;
+        @include media-breakpoint-up(lg) {
+            padding-left: 60px;
+            padding-right: 60px;
+            border-radius: 0;
+        }
+    }
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        font-weight: bold;
+        color: $body-color;
+        font-size: rem(16px);
+        background-color: $green;
+        text-decoration: underline;
+        border-radius: 10px 10px 0 0;
+        border-color: $green !important;
+    }
+    .nav-link:hover {
+        color: $body-color;
+        border-color: $bg-grey;
+        background-color: $green;
+        text-decoration: underline;
+    }
+}
+
+// ---------- profile-tabs-content ----------
+.profile-tabs-content {
+    @include media-breakpoint-up(lg) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @include media-breakpoint-down(md) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}

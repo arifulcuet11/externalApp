@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-12 text-center py-4 page-title">
+    <h3>Log in</h3>
+  </div>
+</div>
+<form [formGroup]="authForm"  class="example-form signup">
+  <div class="row">
+    <div class="col-12">
+      <p class="login-title">Enter your Username and Password</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="form-title"><em>All fields are required</em></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email </mat-label>
+            <input matInput formControlName="email" >
+            <!-- [errorStateMatcher]="matcher" -->
+            <!-- <mat-hint>Enter email address</mat-hint> -->
+            <mat-error *ngIf="authForm.controls['email'].hasError('email') && !authForm.controls['email'].hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="authForm.controls['email'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+          <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Password </mat-label>
+              <input matInput formControlName="password" type="password"  minlength="6">
+              <!-- <mat-hint>Enter password</mat-hint> -->
+              <mat-error *ngIf="authForm.controls['password'].hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12 mx-auto">
+          <a class="pb-2 d-block diff-account-link" (click)='forgetPassword()'><u>Forget Password</u></a>
+          <!-- <button type="button" class="btn btn-secondary w-75 m-auto"  (click)='forgetPassword()'>Forget Password</button> -->
+      </div> 
+  </div>
+   <div class="row">
+      <div class="col-12 mx-auto mt-3">
+          <button type="button" class="btn btn-primary btn-block w-75 m-auto"  [disabled]='!authForm.valid' (click)='login()'>Login</button>
+          <!-- <button mat-stroked-button color="primary" class="w-100" [disabled]='!authForm.valid' (click)='login()'>Login</button> -->
+      </div> 
+    </div> 
+
+    <!-- <div class="row text-center">
+        <div class="col-12 mx-auto mt-3">
+            <button type="button" class="btn btn-secondary w-75 m-auto"  (click)='signup()'>Create Account</button>
+        </div> 
+    </div> 
+      
+    <div class="row text-center">
+      <div class="col-12 mx-auto mt-3">
+          <button type="button" class="btn btn-secondary w-75 m-auto"  (click)='submitClaim()'>Submit your claim</button>
+      </div> 
+  </div>   -->
+</form>

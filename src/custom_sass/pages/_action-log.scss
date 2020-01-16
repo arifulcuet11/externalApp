@@ -1,0 +1,266 @@
+.action-log {
+    .img-thumbnail {
+        width: 100px;
+        height: 100px;
+        @include media-breakpoint-down(sm) {
+            width: 70px;
+            height: 70px;
+        }
+    }
+    .userData {
+        padding-top: 8px;
+        margin-left: 16px;
+        @include media-breakpoint-down(sm) {
+            padding-top: 0;
+            margin-left: 10px;
+        }
+        h2, h6 {
+            a {
+                color: $gray-800;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size: 14px;
+            }
+        }   
+        h2 {
+            font-weight: bold;
+            color: $gray-800;
+            font-size: 24px;
+            @include media-breakpoint-down(sm) {
+                font-size: 20px;
+            }
+        }     
+    }
+    .course__module {
+        padding-left: 39px;
+        @include media-breakpoint-down(sm) {
+            padding-left: 0;
+        }
+        .module-list {
+            padding-left: 36px;
+            @include media-breakpoint-down(sm) {
+                padding-left: 0;
+                padding-top: 0;
+            }
+            .module-progress, .module-previousday {
+                padding-bottom: 50px;
+                @include media-breakpoint-down(sm) {
+                    padding-left: 0;
+                    padding-top: 0;
+                    padding-bottom: 30px;
+                }
+                .day-title {
+                    color: $green;                
+                    font-size: 18px;
+                    display: none;
+                    padding-bottom: 10px;
+                }
+                .icon-wrapper {
+                    color: $green;                
+                    font-size: 22px;
+
+                    .feather-icon {
+                        color: $green;
+                        // fill: $green;
+                        float: left;
+                        margin-top: 3px;
+                        width: 30px;
+                        height: 20px;
+                    }                    
+                    span:first-of-type {
+                        line-height: 22px;
+                        display: table-cell;
+                        vertical-align: bottom;
+                        padding-right: 5px;
+                    }
+                    span {
+                        display: table-cell;
+                        vertical-align: top;
+                    }
+                }        
+                .icon-wrapper + p {
+                    font-size: 16px;
+                    padding-left: 6px;
+                }
+                .comment-box {
+                    border: 1px solid $gray-light;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        margin: auto;
+                        top: 50px;
+                        left: -12px;
+                        right: auto;
+                        width: 22px;
+                        height: 22px;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(135deg);
+                        -moz-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        border-right: 1px solid $gray-light;
+                        border-bottom: 1px solid $gray-light;
+                        background-color: $white;
+                        @include media-breakpoint-down(sm) {
+                            display: none;
+                        }
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        margin: auto;
+                        top: 51px;
+                        left: -39px;
+                        right: auto;
+                        width: 21px;
+                        height: 21px;
+                        background-color: #a4cd39;
+                        border-radius: 50%;
+                        border: 3px solid #fff;
+                        z-index: 1;
+                        @include media-breakpoint-down(sm) {
+                            display: none;
+                        }
+                    }                
+                    .comment-inner {
+                        padding-left: 0;
+                        .comment-inner-left, .comment-inner-right {
+                            display: inline-block;
+                            padding-left: 0;
+                        }
+                        .comment-inner-right {
+                            
+                            .btn-action-log {
+                                color: $blue-medium;
+                                font-size: 13px; 
+                            }
+                        }
+                        .user-text{
+                            font-size: 14px;
+                        }
+                    }
+                    .date-box {
+                        color: #a5cb57;
+                        font-size: 20px;
+                        width: 50px;
+                        text-align: center;
+                        padding-left: 0;
+                        position: absolute;
+                        top: -16px;
+                        left: -107px;
+                        .day-txt {
+                            border-bottom: 2px solid $green;
+                            font-size: 26px;
+                        }
+                        @include media-breakpoint-down(sm) {
+                            display: none;
+                        }
+                    }
+                    .date-box-custom{
+                        width: auto;
+                        top: initial;
+                        left: -135px;
+                    }
+                }
+                &::after {
+                    background-color: $green;
+                    display: block;
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                }
+                &::before {
+                    background: none;
+                }
+                &:first-of-type .day-title {
+                    display: block;
+                }
+                &:first-of-type::before {
+                    background: url(../images/map-pin.png) no-repeat;
+                    width: 35px;
+                    left: 11px;
+                    @include media-breakpoint-down(lg) {
+                        left: -39px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                }
+                &:last-of-type {
+                    padding-bottom: 50px;
+                }                               
+            }
+            .module-previousday {
+
+                .day-title {
+                    color: $gray-999;                
+                    font-size: 18px;
+                    display: none;
+                }
+                .icon-wrapper {
+                    color: $gray-999;
+
+                    .feather-icon {
+                        color: $gray-999;
+                        // fill: $gray-999;
+                    }                    
+                }        
+                .comment-box {
+                    border: 1px solid $gray-light;
+                    &::after {
+                        content: "";
+                    }
+                    &::before {
+                        content: "";                    
+                        background-color: $gray-medium;
+                    }                
+                    .comment-inner {
+                        .comment-inner-left, .comment-inner-right {
+                            p {
+                                color: $gray-999;
+                            }
+                        }
+                        .comment-inner-right {                
+                            .btn-action-log {
+                                color: $gray-999;                                
+                            }
+                        }
+                    }
+                    .date-box {
+                        color: $gray-999;                    
+                        .day-txt {
+                            border-bottom: 2px solid $gray-medium;
+                        }
+                    }
+                }
+                &::after {
+                    background-color: $gray-medium;
+                }
+                &.first .day-title {
+                    display: block;
+                }
+                &:last-child {
+                    padding-bottom: 50px;
+                }   
+                &.first {
+                    padding-top: 0;
+                }    
+                &.first::before {
+                    background: url(../images/map-pin-completed.png) no-repeat;
+                    width: 35px;
+                    left: 11px;
+                    top: 0;
+                    @include media-breakpoint-down(lg) {
+                        left: -39px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        display: none;
+                    }
+                }             
+            }    
+        }
+        
+    }
+}

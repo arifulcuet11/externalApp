@@ -1,0 +1,16 @@
+// layout
+// --------------------------------------------------
+
+.layout {
+    //---- Layout 1 ----
+    &__1 {
+        @include media-breakpoint-up(lg) {
+            padding-top: 70px;
+        }
+        @include media-breakpoint-down(md) {
+            padding-top: 50px;
+        }
+    }
+}
+
+

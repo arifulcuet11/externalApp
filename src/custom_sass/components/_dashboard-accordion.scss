@@ -1,0 +1,48 @@
+// Dashboard Accordion
+// --------------------------------------------------
+
+.dashboard-accordion {
+    .card-header {
+        background-color: $white;
+        h5 {
+            display: flex;
+            margin-bottom: 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &:first-child {
+            border-top: 1px solid rgba(0, 0, 0, .125);
+        }
+    }
+    &__title {
+        cursor: pointer;
+        color: $black;
+        font-weight: bold;
+        font-size: rem(16px);
+    }
+    &__icon {
+        width: 20px;
+        text-align: center;
+    }
+    .collapsed {
+        .feather-minus {
+            display: none;
+        }
+        .feather-plus {
+            display: inline-block;
+        }
+    }
+    .feather-plus {
+        display: none;
+    }
+    .feather {
+        width: 18px;
+        color: $black;
+        cursor: pointer;
+    }
+    .card-body,
+    .card-header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

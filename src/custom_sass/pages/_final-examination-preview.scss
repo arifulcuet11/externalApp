@@ -1,0 +1,41 @@
+
+// Final Examination Preview
+// --------------------------------------------------
+.final_exam_preview {
+
+    .modal-dialog {
+         max-width: 800px;
+        /*min-height: 300px;
+       max-height: calc(100% - 4rem);
+        margin: 2rem auto;*/
+    
+        .modal-header {        
+            display: block;
+
+            .modal-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                outline: none;
+            }
+        }
+        .modal-body {
+            height: 80vh;
+            overflow-y: auto;
+
+            .tab-pane__left {
+                width: 50px;
+            }
+            .tab-pane__right {
+                width: calc(100% - 50px);
+            }
+        }
+        .modal-footer {
+            border-top: 0;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "barcode_METCLDR10": "IndividualDeath",
+    "barcode_METCLDS11": "DeathCertificate",
+    "barcode_METCLIB12": "NationalId",
+    "barcode_METCLPR13": "MicrChequeLeaf",
+    "barcode_METCLMD14": "PolicyDocument"
+  }
+  

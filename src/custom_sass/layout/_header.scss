@@ -1,0 +1,205 @@
+// Header
+// --------------------------------------------------
+.global-header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    position: fixed;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: rem(11px);
+    transition: height .5s;
+    background-color: #fff;
+    @include media-breakpoint-up(lg) {
+        height: 70px;
+    }
+    @include media-breakpoint-down(md) {
+        height: 50px;
+    }
+}
+.logo {
+    @include media-breakpoint-down(lg) {
+        img {
+            width: 100px;
+        }
+    }
+}
+
+// --------------- top-nav --------------
+.top-nav {
+    margin-bottom: 0;
+    &>li {
+        vertical-align: top;
+        &>a {
+            color: $black;
+            display: flex;
+            font-weight: bold;
+            align-items: center;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            &:hover {
+                color: $blue;
+                text-decoration: none;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 70px;
+            }
+            @include media-breakpoint-down (md) {
+                height: 50px;
+            }
+            &>span {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    &__title {
+        color: $black;
+        font-weight: 500;
+        font-size: rem(11px);
+    }
+    &--left {
+        &>li {
+            &>a {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+    &--right {
+        &>li {
+            &>a {
+                @include media-breakpoint-up(lg) {
+                    padding-left: 35px;
+                    padding-right: 35px;
+                }
+                @include media-breakpoint-down (md) {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                &.active {
+                    background-color: $bg-grey;
+                }
+            }
+        }
+    }
+    &__menu,
+    &__home,
+    &__search {
+        display: inline-block;
+        @include media-breakpoint-up (md) {
+            .feather {
+                margin-right: 10px;
+            }
+        }
+        .top-nav__title {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+    &__menu {
+        .feather-menu {
+            width: 16px;
+            height: 15px;
+            color: transparent;
+            background: url(#{$img-url}custom_icons.png) -53px 0  no-repeat;
+        }
+        .feather-x {
+            width: 21px;
+            height: 21px;
+        }
+    }
+    &__home {
+        .feather-home {
+            width: 19px;
+            height: 17px;
+            color: transparent;
+            margin-right: 10px;
+            background: url(#{$img-url}custom_icons.png) 0 0  no-repeat;
+        }
+    }
+    &__search {
+        .feather-search {
+            width: 18px;
+            height: 17px;
+            color: transparent;
+            margin-right: 10px;
+            background: url(#{$img-url}custom_icons.png) -21px 0  no-repeat;
+        }
+    }
+    &__login {
+        display: inline-block;
+        .feather-lock,
+        .feather-unlock {
+            width: 10px;
+            height: 14px;
+            color: transparent;
+            margin-left: 15px;
+            background: url(#{$img-url}custom_icons.png) -41px 0  no-repeat;
+        }
+    }
+    &__apply,
+    &__contact {
+        @include media-breakpoint-up (md) {
+            display: inline-block;
+        }
+        @include media-breakpoint-down(sm) {
+            display: none !important;
+        }
+    }
+    &__language {
+        display: none;
+        .feather-chevron-down {
+            width: 20px;
+            height: 15px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.open-homemenu {
+    .top-nav__language {
+        display: inline-block;
+    }
+    .top-nav__login,
+    .top-nav__contact {
+        display: none;
+    }
+}
+
+// -------------- home-search ------------------
+.top-nav__search {
+    position: relative;
+}
+.home-search {
+    top: 0;
+    left: 0;
+    display: flex;
+    position: absolute;
+    background: $white;
+    align-items: center;
+    @include media-breakpoint-up(lg) {
+        height: 70px;
+    }
+    @include media-breakpoint-down (md) {
+        height: 50px;
+    }
+    .form-control {
+        width: 0;
+        height: 30px;
+        font-size: rem(14px);
+        color: $body-color;
+        padding-right: 22px;
+        transition: all .7s;
+        border-color: $black;
+        background-color: #fff;
+    }
+    &--200 {
+        .form-control {
+            width: 200px;
+            background: url(#{$img-url}icon-search-black.png) no-repeat right 5px center;
+        }
+    }
+}

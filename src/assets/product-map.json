@@ -1,0 +1,8 @@
+{
+    "ip": {
+        "productName": "",
+        "productCode": "",
+        "components": ["RoomRentComponent", "SurgeryCostComponent","OpticalAccessoryCostComponent"]
+    }
+    
+}

@@ -1,0 +1,208 @@
+// Button
+// --------------------------------------------------
+.btn-primary, 
+.mat-button.mat-primary, 
+.mat-icon-button.mat-primary, 
+.mat-stroked-button.mat-primary {
+  color: $white;
+  background-color: $blue;
+  background-image: none;
+  border-color: $blue;
+}
+.btn-primary:hover {
+  color: $white;
+  border-color: $text-blue;
+  background-color: $text-blue;
+  text-decoration: underline;
+}
+.btn.btn-primary.focus, 
+.btn.btn-primary:focus {
+  text-decoration: underline;
+  box-shadow: 0 0 7px #333;
+  background-color: #0061a0;
+}
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active:focus, 
+.btn-primary:not(:disabled):not(.disabled).active:focus, 
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: none;
+  background-color: #0061a0;
+}
+
+.btn-secondary{
+  box-sizing: content-box;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0;
+  display: inline-block;
+}
+
+
+.btn-secondary:hover, 
+.btn-secondary:focus, 
+.hover.btn-secondary{
+  text-decoration: underline;
+}
+
+.btn-secondary:focus, 
+.focus.btn-secondary{
+  outline-color: #333;
+  text-decoration: underline;
+}
+
+
+.focus.btn-secondary{
+  box-shadow: 0 0 3px #333, 0 0 7px #333;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #007abc;
+  border: solid 1px #007abc;
+}
+
+.btn-secondary:focus, 
+.btn-secondary:hover, 
+.btn-secondary.hover, 
+.btn-secondary.focus {
+  background-color: #007abc;
+  color: #fff;
+}
+
+.btn.btn-secondary {
+  max-width: 248px;
+  height: 38px;
+  color: #007abc;
+  background-color: $white;
+  background-image: none;
+  box-shadow: none;
+  border: 1px solid #007abc;
+}
+.btn.btn-secondary.focus, 
+.btn.btn-secondary:hover, 
+.btn.btn-secondary:not(:disabled):not(.disabled):active {
+  color: #fff;
+  border-color: #007abc;
+  background-color: #007abc;
+  text-decoration: underline;
+  outline: 0;
+  box-shadow: none;
+}
+.btn.btn-secondary.focus, .btn.btn-secondary:focus {
+  text-decoration: underline;
+  box-shadow: 0 0 7px #333;
+  background-color: #007abc;
+  color: #fff;
+}
+.btn {  
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  height: 40px;
+  line-height: 24px;
+  border-radius: 2px;
+  max-width: 250px;
+  min-width: 69px;
+  width: auto;
+  @include media-breakpoint-down(lg) {
+      font-size: 12px;
+  }
+  &.w-150 {
+    min-width: 150px;
+  }
+  &.w-180 {
+    min-width: 180px;
+  }
+  // Disabled
+  &.disabled,
+  &:disabled,
+  &.disabled:hover,
+  &:disabled:hover,
+  &:disabled:focus {
+    color: rgba(0,0,0,.26);
+    border-color: $disabled;
+    background-color: $disabled;
+    opacity: 1;
+    text-decoration: none;
+    cursor: not-allowed;
+  }
+  i {
+    span {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  }
+  &:hover i {
+    text-decoration: underline;
+  }
+}
+a.btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  // height: 40px;
+  // line-height: 24px;
+  @include media-breakpoint-down(lg) {
+      font-size: 12px;
+  }
+  &.w-150 {
+    min-width: 150px;
+  }
+  &.w-180 {
+    min-width: 180px;
+  }
+  // Disabled
+  &.disabled,
+  &:disabled,
+  &.disabled:hover,
+  &:disabled:hover {
+    color: $blue-medium;
+    border-color: $blue-medium;
+    background-color: $white;
+    opacity: 1;
+    text-decoration: none;
+    text-decoration: none;
+  }
+  &:hover i {
+    text-decoration: underline;
+  }
+}
+.btn-sm {
+  min-width: auto;
+  height: auto;
+  line-height: 1.5;
+}
+.btn-submit {
+  width: 180px;
+}
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background-color: $blue;
+}
+.ho-no-decoration:hover {
+  text-decoration: none;
+}
+.icon-button, 
+.icon-button.mat-raised-button:not([class*=mat-elevation-z]) {
+    color: #007abc;
+    border: 0;
+    background: transparent;
+    font-size: 20px;
+    box-shadow: none;
+    min-width: auto;
+    padding: 0 10px;
+    @include media-breakpoint-down(sm) {
+        padding: 0 6px;
+    }
+}
+.mat-sort-header-button {
+  font-family: $ml-font-family-sans-serif !important;
+}
+

@@ -1,0 +1,260 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// vendors scss
+@import './../node_modules/bootstrap/scss/bootstrap.scss';
+
+// helpers scss
+@import 'custom_sass/helpers/_variables';
+@import 'custom_sass/helpers/_mixins';
+@import 'custom_sass/helpers/_functions';
+//@import 'helpers/_extended-class';
+
+// base scss
+@import 'custom_sass/base/_reset';
+
+@import 'custom_sass/layout/_forms';
+
+// components scss
+@import 'custom_sass/components/_buttons';
+@import 'custom_sass/components/_material-overwrite';
+@import 'custom_sass/components/_tab';
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0px;
+}
+
+.tbl-serial-row {
+  width: 30px;
+}
+
+
+.mat-form-field {
+  width: 100% !important;
+  display: block !important;
+  margin-top: 0.8em;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+.mat-form-field-outline {
+  background: #fff !important;
+  border-radius: 5px;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  top: 0.1em !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 5px 0 0.5em !important;
+  font-size: 14px !important;
+}
+.mat-form-field-infix {
+  height: 42px !important;
+}
+// input.mat-input-element {
+//     margin-top: -.0625em;
+// }
+.mat-form-field .mat-form-field-label-wrapper {
+  top: -19px !important;
+}
+
+.region-root-list {
+  // height: 550px;
+  // overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.btn-styler {
+  margin-top: 4px;
+}
+
+.mleft {
+  margin-left: -15px !important;
+}
+
+.mat-paginator-page-size-select {
+  margin: 6px 4px 0 4px;
+  width: 56px !important;
+}
+.table-container {
+  height: 300px;
+  overflow: auto;
+}
+
+.btn-group-inline {
+  display: flex;
+}
+.btn-group-inline .btn {
+  margin-left: 5px;
+}
+//  .img-container {
+//     height: 80vh !important;
+// }
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+app-claim-entry .mat-expansion-panel {
+  margin-bottom: 20px;
+}
+mat-expansion-panel .mat-list-item-content {
+  font-size: 13px;
+  color: #666;
+}
+.main-title {
+  font-size: 24px;  
+  color: #fff;
+  @include media-breakpoint-down(sm) {
+      font-size: 14px;
+  }
+}
+a, a:not([href]):not([tabindex]) {
+  color: $blue;
+  &:hover {
+    color: $blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }  
+}
+
+.cdk-global-overlay-wrapper .cdk-overlay-pane {
+  width: 600px !important;
+  max-height: 90vh;
+}
+.ml-table-alt-rows {
+  width: 100%;
+  color: #333333;
+  font-size: 13px;
+  background: #ffffff;
+  margin: 0px;
+  border-collapse: collapse;
+}
+.ml-table-title {
+  height: 37px;
+  line-height: 37px;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #007ABC;
+}
+.ml-table-alt-rows tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+.ml-table-alt-rows tr:nth-child(even) {
+  background-color: #E5F4FB;
+}
+.ml-table-alt-rows tr {
+  text-align: center;
+  height: 37px;
+}
+.page-heading {
+  font-size: 24px;
+  font-weight: 700;
+}
+.mat-table tr.mat-footer-row, .mat-table tr.mat-row {
+  height: 37px;
+}
+.page-title {
+  background: #eee;
+}
+
+.mat-calendar-spacer {
+  display: none;
+}
+.mat-calendar-period-button.mat-button {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  .mat-button-wrapper {
+    color: #007abc;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #007abc;
+  }
+}
+.mat-datepicker-popup .mat-datepicker-content .mat-calendar {
+  width: 255px;
+  height: 274px;
+}
+.mat-calendar-previous-button.mat-icon-button {
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
+  margin-top: -2px;
+  color: #333;
+}
+.mat-calendar-next-button.mat-icon-button {
+  position: absolute;
+  right: 50%;
+  margin-right: -84px;
+  margin-top: -2px;
+  color: #333;
+}
+mat-calendar .mat-calendar-content {
+  padding-top: 30px;
+}
+.mat-calendar-table-header-divider::after {
+  opacity: 0;
+}
+.mat-calendar-body-selected:not(.mat-calendar-body-today) {
+  border: 0;
+  border-radius: 0;
+  background-color: #0d61a0;
+  color: #fff;
+}
+.mat-calendar-table-header th {
+  font-size: 9px;
+  color: #000;
+}
+.mat-calendar-body-cell-content {
+  width: 84%;
+  height: 84%;
+}
+.mat-calendar-body-cell:hover {
+  background: #e5f4fb;
+  border-radius: 0;
+  .mat-calendar-body-today {
+    background-color: #0d61a0;
+  }
+}
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+  background-color: transparent;
+}
+.mat-calendar-body-cell.mat-calendar-body-disabled {
+  background: unset;
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+  border-color: rgba(0,0,0,.38);
+  border-radius: 0;
+}
+.mat-elevation-z8 {
+  box-shadow: none;
+  border: 1px solid #dee2e6
+}
+.mat-tab-body-wrapper {
+  overflow: visible;
+}

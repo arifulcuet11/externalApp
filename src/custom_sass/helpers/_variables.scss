@@ -1,0 +1,81 @@
+// Variables
+// --------------------------------------------------
+
+
+$img-url : '../images/';
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$browsing-context : 16px;
+$ml-font-family-sans-serif:  'Arial','Helvetica','sans-serif';
+$ml-headings-font-family : 'Georgia','Times New Roman','Times','serif';
+//$ml-button-font-family : 'Noto Sans', sans-serif;
+
+//<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+//
+// Color system
+//
+
+//--override bootstrap --
+$disabled:      #D9D9D9;
+$blue:          #007abc;
+$blue-medium:   #0090DA;
+$gray-800:      #666666;
+$gray-900:      #333333;
+$gray-999:      #999999;
+$gray-light:    #dee2e6;  
+$gray-medium:   #d1d2d4;
+$gray-dark:     #222222;
+$red:           #eb4646;
+$green:         #a5cb57;
+
+//-- custom --
+$text-blue:     #0061a0;
+$menu-blue:     #0c639e;
+$bg-grey :      #f2f2f2;
+
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:    $text-blue;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-radius:  0.125rem;
+
+
+
+
+
+// ---------------- Global bootstap seetings ---------------
+
+// breadcrumb 
+$breadcrumb-bg: $bg-grey;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-divider: quote(">");
+
+
+
+// Tooltips
+
+$tooltip-font-size:                 rem(13px);
+$tooltip-max-width:                 300px;
+$tooltip-bg:                        $blue;
+$tooltip-border-radius:             0;
+$tooltip-opacity:                   1;
+
+$tooltip-arrow-width:               8px;
+$tooltip-arrow-height:              4px;
+$tooltip-arrow-color:               $blue;
+
+// button
+$input-btn-padding-y:         .44rem;

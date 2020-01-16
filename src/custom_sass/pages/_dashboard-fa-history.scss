@@ -1,0 +1,82 @@
+// Dashboard FA Histroy
+// --------------------------------------------------
+
+.fa-histroy {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+//---------- Accordion FA Histroy ----------
+.dashboard-accordion {
+    &--fa-histroy {
+        .card-header {
+            position: relative;
+            &:first-child {
+                border-top: 0;
+                &::after {
+                    top: 12px;
+                }
+            }
+            &::after {
+                top: 0;
+                width: 5px;
+                left: -25px;
+                content: '';
+                height: 105%;
+                position: absolute;
+                border-radius: 3px;
+            }
+            &::before {
+                top: 12px;
+                z-index: 51;
+                content: '';
+                left: -36px;
+                width: 26px;
+                height: 26px;
+                position: absolute;
+            } //-- continue --
+            &--continue {
+                &::after {
+                    background-color: $red;
+                }
+                &::before {
+                    background: url(#{$img-url}checkbox-3-active.png) no-repeat;
+                }
+            } //-- continue --
+            &--completed {
+                &::after {
+                    background-color: $green;
+                }
+                &::before {
+                    background: url(#{$img-url}checkbox-1-active.png) no-repeat;
+                }
+            } //-- continue --
+            &--progress {
+                &::after {
+                    background-color: $blue;
+                }
+                &::before {
+                    background: url(#{$img-url}checkbox-2-active.png) no-repeat;
+                }
+            }
+        }
+        .dashboard-accordion__title {
+            color: $blue;
+            text-decoration: underline;
+        }
+    }
+}
+
+// ----------- training -----------
+.training {
+    &__instruction {
+        p {
+            font-size: 13px;
+        }
+        .btn {
+            border-width: 2px;
+            max-width: 252px;
+            font-weight: bold;
+        }
+    }
+}

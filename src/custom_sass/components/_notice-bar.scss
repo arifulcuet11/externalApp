@@ -1,0 +1,50 @@
+// Noctice bar (alert)
+// --------------------------------------------------
+
+.notice {
+    padding: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-left: 6px solid;
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+    &--sm {
+        padding: 10px;
+        font-size: 80%;
+    }
+    &--lg {
+        padding: 35px;
+        font-size: large;
+    }
+    &--success {
+        border-color: $success;
+        strong {
+            color: $success;
+        }
+    }
+    &--info {
+        border-color: $cyan;
+        strong {
+            color: $cyan;
+        }
+    }
+    &--warning {
+        border-color: $yellow;
+        strong {
+            color: $yellow;
+        }
+    }
+    &--danger {
+        border-color: $danger;
+        strong {
+            color: $danger;
+        }
+    }
+    &--primary {
+        border-color: $primary;
+        strong {
+            color: $primary;
+        }
+    }
+}
+

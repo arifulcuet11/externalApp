@@ -1,0 +1,82 @@
+// Dashboard Upload popup
+// --------------------------------------------------
+.upload {
+    //--- modal --- 
+    @include media-breakpoint-up(sm) {
+        .modal-dialog {
+            max-width: 800px;
+        }
+    }
+    .modal-header {
+        border-bottom: 0;
+    }
+    .modal-title {
+        color: $black;
+        flex: 1;
+        text-align: center;
+        font: {
+            weight: bold;
+            size: rem(24px);
+            family: $headings-font-family;
+        }
+    }
+    .close {
+        color: $blue;
+    }
+    .modal-body {
+        padding: 20px 20px 30px;
+    }
+    &__article {
+        h3 {
+            color: $black;
+            margin-bottom: 0;
+            font: {
+                weight: bold;
+                size: rem(14px);
+            }
+        }
+        p {
+            font-size: rem(14px);
+        }
+    } //-- upload box -- 
+    &__box {
+        height: 178px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        outline: 1px solid #c9c9c9;
+        border: 2px solid $body-color;
+        p {
+            margin-bottom: 0;
+        }
+        .custom-file-input,
+        .custom-file-label {
+            opacity: 0;
+            cursor: pointer;
+            position: absolute;
+        }
+        .custom-file-input {
+            width: 100%;
+            height: 100%;
+        }
+        .btn {
+            width: 184px;
+            margin-top: 0.5rem;
+        }
+        .feather-arrow-up-circle {
+            color: $blue;
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &__ongoing {
+        h3 {
+            font-size: rem(14px);
+        }
+    }
+    &__status {
+        margin-top: 8px;
+        font-size: rem(13px);
+    }
+}

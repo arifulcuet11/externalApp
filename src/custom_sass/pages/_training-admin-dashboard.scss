@@ -1,0 +1,87 @@
+// Training Admin Dashboard
+// --------------------------------------------------
+.training-admin-dashboard {
+  .box-max-width {
+    max-width: 200px;
+    @include media-breakpoint-down(sm) {
+      max-width: 154px;
+    }
+    span {
+      font-size: 140px;
+      padding: 0;
+      border: 2px solid #ddd;
+      float: left;
+      margin-bottom: 10px;
+      clear: both;
+      @include media-breakpoint-down(md) {
+        font-size: 130px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 120px;
+      }
+    }
+    .icon-05 {
+      font-size: 110px;
+      text-align: right;
+      width: 100%;
+      float: right;
+      height: 100%;
+      padding-top: 31px;
+      .cross {
+        font-size: 40px;
+        position: absolute;
+        top: 10px;
+        left: 25px;
+        border: 0;
+        &::before {
+          color: #f00;
+        }
+      }
+      .yes {
+        font-size: 40px;
+        position: absolute;
+        top: 50px;
+        left: 25px;
+        border: 0;
+        &::before {
+          color: #137504;
+        }
+      }
+      p {
+        font-size: 15px;
+        position: absolute;
+        top: 16px;
+        left: 70px;
+        color: #000;
+        font-weight: bold;
+      }
+    }
+    .icon-09 {
+      padding-top: 30px;
+      max-height: 145px;
+      float: left;
+      &::before {
+        color: #0bafe7;
+      }
+      span {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        padding: 2px 2px 5px;
+        h3 {
+          font-size: 10px;
+          color: #757575;
+          margin-bottom: 0;
+        }
+        p {
+          font-size: 12px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    .caption {
+      font-size: rem(13px);
+      clear: both;
+    }
+  }
+}
